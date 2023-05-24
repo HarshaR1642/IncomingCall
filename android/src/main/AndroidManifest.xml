@@ -6,12 +6,12 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
-    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    <application>
 
         <activity
             android:launchMode="singleInstance"
             android:exported="true"
-            android:name=".IncomingCall"
+            android:name=".call.IncomingCall"
             android:showOnLockScreen="true">
             <intent-filter>
                 <action android:name="DESTROY_CALL" />
@@ -23,12 +23,12 @@
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             android:launchMode="singleInstance"
             android:exported="true"
-            android:name=".AnswerCall"
+            android:name=".call.AnswerCall"
             android:showOnLockScreen="true" />
 
-        <service android:name=".CallService" />
+        <service android:name=".call.CallService" />
 
-        <receiver android:name=".HungUpBroadcast" />
+        <receiver android:name=".call.HungUpBroadcast" />
 
     </application>
 
