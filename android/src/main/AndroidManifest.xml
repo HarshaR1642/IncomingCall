@@ -1,0 +1,36 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity
+            android:launchMode="singleInstance"
+            android:exported="true"
+            android:name=".IncomingCall"
+            android:showOnLockScreen="true">
+            <intent-filter>
+                <action android:name="DESTROY_CALL" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:supportsPictureInPicture="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:launchMode="singleInstance"
+            android:exported="true"
+            android:name=".AnswerCall"
+            android:showOnLockScreen="true" />
+
+        <service android:name=".CallService" />
+
+        <receiver android:name=".HungUpBroadcast" />
+
+    </application>
+
+</manifest>
+  
