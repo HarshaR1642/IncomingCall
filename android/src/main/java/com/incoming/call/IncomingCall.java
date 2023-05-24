@@ -36,6 +36,8 @@ public class IncomingCall extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.call_fullscreen);
+
         Bundle bundle = getIntent().getExtras();
         TextView name = findViewById(R.id.name);
         LinearLayout acceptButton = findViewById(R.id.acceptButton);
@@ -59,7 +61,6 @@ public class IncomingCall extends AppCompatActivity {
                         | WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON
         );
 
-        setContentView(R.layout.call_fullscreen);
         String callerName = bundle.getString("callerName");
         if (callerName != null) {
             name.setText(callerName);

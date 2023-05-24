@@ -36,6 +36,7 @@ public class AnswerCall extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.call_accept);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
             setShowWhenLocked(true);
@@ -68,7 +69,6 @@ public class AnswerCall extends AppCompatActivity {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancel(1000);
-        setContentView(R.layout.call_accept);
         Bundle bundle = getIntent().getExtras();
         String component = bundle.getString("component");
         ReactFragment reactNativeFragment = new ReactFragment.Builder()
