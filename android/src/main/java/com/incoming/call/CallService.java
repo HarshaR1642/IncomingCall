@@ -90,7 +90,7 @@ public class CallService extends Service {
         notification.setContentTitle(Constants.NAME);
         notification.setTicker(Constants.NAME);
         notification.setContentText(Constants.NAME);
-        notification.setSmallIcon(R.drawable.incoming_video_call);
+        notification.setSmallIcon(R.drawable.video_call);
         notification.setCategory(NotificationCompat.CATEGORY_CALL);
         notification.setOngoing(true);
         notification.setFullScreenIntent(pendingIntent, true);

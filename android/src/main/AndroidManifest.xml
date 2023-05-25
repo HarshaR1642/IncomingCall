@@ -1,5 +1,4 @@
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.incoming">
 
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
@@ -12,19 +11,13 @@
 
         <activity
             android:launchMode="singleInstance"
-            android:exported="true"
             android:name=".call.IncomingCall"
-            android:showOnLockScreen="true">
-            <intent-filter>
-                <action android:name="DESTROY_CALL" />
-            </intent-filter>
-        </activity>
+            android:showOnLockScreen="true" />
 
         <activity
             android:supportsPictureInPicture="true"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             android:launchMode="singleInstance"
-            android:exported="true"
             android:name=".call.AnswerCall"
             android:showOnLockScreen="true" />
 
