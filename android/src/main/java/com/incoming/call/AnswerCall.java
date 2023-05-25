@@ -14,10 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.react.ReactFragment;
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.incoming.R;
 import com.incoming.utility.Constants;
 
-public class AnswerCall extends AppCompatActivity {
+public class AnswerCall extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
 
     public static boolean active = false;
 
@@ -80,6 +81,11 @@ public class AnswerCall extends AppCompatActivity {
                 .beginTransaction()
                 .add(R.id.reactNativeFragment, reactNativeFragment)
                 .commit();
+    }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        super.onBackPressed();
     }
 
     public class MBroadcastReceiver extends BroadcastReceiver {
